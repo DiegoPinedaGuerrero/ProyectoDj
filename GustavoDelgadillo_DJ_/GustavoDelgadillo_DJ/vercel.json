@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/styles.css", "dest": "/styles.css" },
+    { "src": "/script.js", "dest": "/script.js" },
+    { "src": "/admin.html", "dest": "/admin.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

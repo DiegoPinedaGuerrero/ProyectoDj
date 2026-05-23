@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Panel Admin | Gustavo Delgadillo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page">
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación admin">
+      <a class="brand" href="index.html" aria-label="Volver al sitio Gustavo Delgadillo">
+        <img src="assets/logo-gd.png" alt="Logo Gustavo Delgadillo" />
+        <span>Panel Admin</span>
+      </a>
+      <div class="nav-links admin-nav-links">
+        <a href="index.html">Volver al sitio</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="admin-hero container">
+      <p class="eyebrow">Gustavo Delgadillo · Administración</p>
+      <h1>Panel de control</h1>
+    </section>
+
+    <section class="section container" id="adminLoginSection">
+      <div class="admin-card login-card">
+        <div>
+          <div class="section-kicker">Acceso privado</div>
+          <h2>Iniciar sesión</h2>
+
+        </div>
+        <form id="adminLoginForm" class="admin-login-form" novalidate>
+          <label>Usuario
+            <input type="text" name="username" autocomplete="username" placeholder="Usuario" required />
+          </label>
+          <label>Contraseña
+            <input type="password" name="password" autocomplete="current-password" placeholder="Contraseña" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Entrar al panel</button>
+          <p class="form-message" id="adminLoginMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section container admin-dashboard hidden" id="adminDashboard">
+      <div class="dashboard-head">
+        <div>
+          <div class="section-kicker">Registros</div>
+          <h2>Leads, solicitudes y reseñas</h2>
+          
+        </div>
+        <div class="dashboard-actions">
+          <button class="btn btn-secondary" id="refreshAdmin" type="button">Actualizar</button>
+          <button class="btn btn-secondary" id="exportAdmin" type="button">Exportar CSV</button>
+          <button class="btn btn-danger" id="clearAdmin" type="button">Borrar registros</button>
+          <button class="btn btn-secondary" id="logoutAdmin" type="button">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <div class="dashboard-stats" aria-label="Resumen de registros">
+        <article><span>Total</span><strong id="totalRecords">0</strong></article>
+        <article><span>Leads</span><strong id="totalLeads">0</strong></article>
+        <article><span>Solicitudes</span><strong id="totalBookings">0</strong></article>
+        <article><span>Reseñas</span><strong id="totalReviews">0</strong></article>
+      </div>
+
+      <div class="admin-card admin-table-card">
+        <div class="table-toolbar">
+          <label>Filtrar registros
+            <select id="adminFilter">
+              <option value="all">Todos</option>
+              <option value="lead">Leads</option>
+              <option value="booking">Solicitudes</option>
+              <option value="review">Reseñas</option>
+            </select>
+          </label>
+        </div>
+        <div class="admin-table-wrap" id="adminOutput"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
